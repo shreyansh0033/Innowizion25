@@ -1,0 +1,17 @@
+/* Custom Swiper Styles */
+.team-swiper {
+  padding: 20px 40px !important;
+}
+
+.team-swiper .swiper-button-next,
+.team-swiper .swiper-button-prev {
+  color: #ff8329;
+}
+
+.team-swiper .swiper-pagination-bullet {
+  background: #ff8329;
+}
+
+.team-swiper .swiper-pagination-bullet-active {
+  background: #ff8329;
+}
