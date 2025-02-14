@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, ExternalLink, ChevronDown, Calendar } from "lucide-react";
 import { createPortal } from "react-dom";
-import expoImage from "../assets/event-Images/I-EXPO.jpg";
-import quizImage from "../assets/event-Images/I-QUIZ.jpg";
+import expoImage from "../assets/event-Images/I-Expo.jpg";
+import quizImage from "../assets/event-Images/I-Quiz.jpg";
 import cluminateImage from "../assets/event-Images/I-Cluminate.jpg";
 import dottingImage from "../assets/event-Images/Dotting the Eye.jpg";
 import trashImage from "../assets/event-Images/Trash Bash.jpg";
@@ -33,11 +33,11 @@ interface EventModalProps {
 }
 
 // Form Modal Component
-const FormModal: React.FC<{ isOpen: boolean; onClose: () => void; formUrl: string }> = ({
-  isOpen,
-  onClose,
-  formUrl,
-}) => {
+const FormModal: React.FC<{
+  isOpen: boolean;
+  onClose: () => void;
+  formUrl: string;
+}> = ({ isOpen, onClose, formUrl }) => {
   const [isFormLoaded, setIsFormLoaded] = useState(true);
 
   if (!isOpen) return null;
@@ -48,18 +48,18 @@ const FormModal: React.FC<{ isOpen: boolean; onClose: () => void; formUrl: strin
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       style={{
-        position: 'fixed',
+        position: "fixed",
         zIndex: 99999,
-        backgroundColor: 'rgba(17, 24, 39, 0.85)',
-        backdropFilter: 'blur(8px)',
+        backgroundColor: "rgba(17, 24, 39, 0.85)",
+        backdropFilter: "blur(8px)",
         top: 0,
         left: 0,
         right: 0,
         bottom: 0,
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        padding: '1.5rem'
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        padding: "1.5rem",
       }}
       onClick={onClose}
     >
@@ -70,17 +70,17 @@ const FormModal: React.FC<{ isOpen: boolean; onClose: () => void; formUrl: strin
         className="relative w-full max-w-4xl h-[85vh] bg-[#111827] rounded-2xl shadow-2xl overflow-hidden"
         onClick={(e) => e.stopPropagation()}
         style={{
-          position: 'relative',
+          position: "relative",
           zIndex: 100000,
-          boxShadow: '0 0 40px rgba(255, 131, 41, 0.1)',
-          border: '1px solid rgba(255, 131, 41, 0.1)'
+          boxShadow: "0 0 40px rgba(255, 131, 41, 0.1)",
+          border: "1px solid rgba(255, 131, 41, 0.1)",
         }}
       >
         <div
           className="absolute top-0 left-0 right-0 h-14 bg-[#1F2937] flex items-center justify-between px-6"
           style={{
-            borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
-            zIndex: 100001
+            borderBottom: "1px solid rgba(255, 255, 255, 0.1)",
+            zIndex: 100001,
           }}
         >
           <h3 className="text-white font-semibold">Event Registration</h3>
@@ -99,9 +99,9 @@ const FormModal: React.FC<{ isOpen: boolean; onClose: () => void; formUrl: strin
         <div
           className="w-full h-full pt-14"
           style={{
-            position: 'relative',
+            position: "relative",
             zIndex: 100000,
-            backgroundColor: '#1F2937'
+            backgroundColor: "#1F2937",
           }}
         >
           <div className="w-full h-full bg-[#111827] rounded-t-xl overflow-hidden">
@@ -111,8 +111,8 @@ const FormModal: React.FC<{ isOpen: boolean; onClose: () => void; formUrl: strin
               onError={() => setIsFormLoaded(false)}
               title="Event Registration Form"
               style={{
-                filter: 'contrast(95%)',
-                backgroundColor: '#111827'
+                filter: "contrast(95%)",
+                backgroundColor: "#111827",
               }}
             />
           </div>
@@ -126,8 +126,12 @@ const FormModal: React.FC<{ isOpen: boolean; onClose: () => void; formUrl: strin
                 <div className="mb-4">
                   <ExternalLink size={48} className="text-[#FF8329] mx-auto" />
                 </div>
-                <h3 className="text-xl font-semibold text-white mb-3">Unable to Load Form</h3>
-                <p className="text-gray-400 mb-6">The registration form couldn't be loaded in the modal</p>
+                <h3 className="text-xl font-semibold text-white mb-3">
+                  Unable to Load Form
+                </h3>
+                <p className="text-gray-400 mb-6">
+                  The registration form couldn't be loaded in the modal
+                </p>
                 <a
                   href={formUrl}
                   target="_blank"
@@ -156,7 +160,8 @@ const events: Event[] = [
       "A grand exhibition showcasing innovative student projects across various domains. Experience cutting-edge technology, creative solutions, and groundbreaking ideas from young innovators.",
     poster: expoImage,
     notice: notice1,
-    registrationLink: "https://docs.google.com/forms/d/e/1FAIpQLSfi3ZqALhxlpWH36gEHg-eb2KLqnEhi2fjZbVE9EUaxgO800A/viewform?embedded=true&theme=dark",
+    registrationLink:
+      "https://docs.google.com/forms/d/e/1FAIpQLSfi3ZqALhxlpWH36gEHg-eb2KLqnEhi2fjZbVE9EUaxgO800A/viewform?embedded=true&theme=dark",
   },
   {
     id: 2,
@@ -165,7 +170,8 @@ const events: Event[] = [
       "Test your knowledge in this quiz competition. Challenge yourself with questions spanning technology, innovation, science, and current affairs.",
     poster: quizImage,
     notice: notice2,
-    registrationLink: "https://docs.google.com/forms/d/e/1FAIpQLSewHCsGwM8hLchEuILycDNSP3HwpDzsEJ9-T4UXJoP-Mo2C1Q/viewform?embedded=true&theme=dark",
+    registrationLink:
+      "https://docs.google.com/forms/d/e/1FAIpQLSewHCsGwM8hLchEuILycDNSP3HwpDzsEJ9-T4UXJoP-Mo2C1Q/viewform?embedded=true&theme=dark",
   },
   {
     id: 3,
@@ -174,7 +180,8 @@ const events: Event[] = [
       "Drawing, ideas, solutions, teamwork, creativity, problems, charts, brainstorming, expression, innovation.",
     poster: cluminateImage,
     notice: notice3,
-    registrationLink: "https://docs.google.com/forms/d/e/1FAIpQLSeKlLQcGNIG29nOwbiLTxxt5EKNwREzGiDEFMqlyr1ePdhm2Q/viewform?embedded=true&theme=dark",
+    registrationLink:
+      "https://docs.google.com/forms/d/e/1FAIpQLSeKlLQcGNIG29nOwbiLTxxt5EKNwREzGiDEFMqlyr1ePdhm2Q/viewform?embedded=true&theme=dark",
   },
   {
     id: 4,
@@ -183,7 +190,8 @@ const events: Event[] = [
       "Add the final touch to perfection. Showcase your attention to detail and creative problem-solving abilities.",
     poster: dottingImage,
     notice: notice4,
-    registrationLink: "https://docs.google.com/forms/d/e/1FAIpQLSd64bHjDM9PE98qhRYyGo5Q07Wy11icbQMayG5Jt59GFDNthw/viewform?embedded=true&theme=dark",
+    registrationLink:
+      "https://docs.google.com/forms/d/e/1FAIpQLSd64bHjDM9PE98qhRYyGo5Q07Wy11icbQMayG5Jt59GFDNthw/viewform?embedded=true&theme=dark",
   },
   {
     id: 5,
@@ -192,7 +200,8 @@ const events: Event[] = [
       "Turn trash into treasure! Join us for an exciting competition that challenges you to create innovative solutions from recycled materials.",
     poster: trashImage,
     notice: notice5,
-    registrationLink: "https://docs.google.com/forms/d/e/1FAIpQLSdEhXn_w67gLWJkhwd0GvPmidwJ1LAEzFEhXimt-D-m4Mqx7Q/viewform?embedded=true&theme=dark",
+    registrationLink:
+      "https://docs.google.com/forms/d/e/1FAIpQLSdEhXn_w67gLWJkhwd0GvPmidwJ1LAEzFEhXimt-D-m4Mqx7Q/viewform?embedded=true&theme=dark",
   },
   {
     id: 6,
@@ -201,7 +210,8 @@ const events: Event[] = [
       "Debate as tech giants, defend allegations, and justify ethical decisions.",
     poster: techTribunalImage,
     notice: notice6,
-    registrationLink: "https://docs.google.com/forms/d/e/1FAIpQLSce2qzsdaME9-7NDDJA_PEjA2BgghNIJVgLft6VY_i_d9LCvg/viewform?embedded=true&theme=dark",
+    registrationLink:
+      "https://docs.google.com/forms/d/e/1FAIpQLSce2qzsdaME9-7NDDJA_PEjA2BgghNIJVgLft6VY_i_d9LCvg/viewform?embedded=true&theme=dark",
   },
   {
     id: 7,
@@ -226,17 +236,17 @@ const EventModal: React.FC<EventModalProps> = ({ event, onClose }) => {
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
         style={{
-          position: 'fixed',
+          position: "fixed",
           zIndex: 9997,
-          backgroundColor: 'rgba(0, 0, 0, 0.75)',
+          backgroundColor: "rgba(0, 0, 0, 0.75)",
           top: 0,
           left: 0,
           right: 0,
           bottom: 0,
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          padding: '1rem'
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          padding: "1rem",
         }}
         onClick={onClose}
       >
@@ -246,7 +256,7 @@ const EventModal: React.FC<EventModalProps> = ({ event, onClose }) => {
           exit={{ scale: 0.5, y: 100 }}
           className="bg-gray-800 rounded-xl overflow-hidden w-full max-w-4xl h-[80vh]"
           onClick={(e) => e.stopPropagation()}
-          style={{ position: 'relative', zIndex: 9998 }}
+          style={{ position: "relative", zIndex: 9998 }}
         >
           <div className="relative h-full flex flex-col">
             <button
@@ -265,7 +275,10 @@ const EventModal: React.FC<EventModalProps> = ({ event, onClose }) => {
               />
             </div>
 
-            <div className="p-6 bg-gray-800" style={{ position: 'relative', zIndex: 9998 }}>
+            <div
+              className="p-6 bg-gray-800"
+              style={{ position: "relative", zIndex: 9998 }}
+            >
               {event.registrationLink !== "offline" ? (
                 <motion.button
                   onClick={() => setShowForm(true)}
@@ -315,7 +328,9 @@ const Events: React.FC = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 max-w-7xl">
         <div className="flex items-center justify-center gap-3 mb-8">
           <Calendar className="w-6 h-6 sm:w-8 sm:h-8 text-[#ff8329]" />
-          <h2 className="text-2xl sm:text-4xl font-bold text-white font-['Orbitron']">Events</h2>
+          <h2 className="text-2xl sm:text-4xl font-bold text-white font-['Orbitron']">
+            Events
+          </h2>
         </div>
         <p className="text-gray-400 text-center mb-8 max-w-2xl mx-auto">
           Discover our exciting lineup of events designed to challenge your
